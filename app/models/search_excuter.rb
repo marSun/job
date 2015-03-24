@@ -1,13 +1,23 @@
 class SearchExcuter
 
+  POSITIONS = %w(产品经理 IOS工程师 Android工程师 PHP工程师 Java工程师 前端工程师)
+
   def self.excute
+    POSITIONS.each do |position|
+      get_data({
+        position: position
+      })
+    end 
+  end
+
+  def self.get_data(opt)
     hash = {
-          city: "北京",
-          position: "产品经理",
-          experience: "1-3年",
-          position_type: "全职",
-          education: "本科",
-          pub_time: "一月内",
+          city: opt[:city] || "北京",
+          position: opt[:position] || "产品经理",
+          experience: opt[:experience] || "1-3年",
+          position_type: opt[:position_type] || "全职",
+          education: opt[:education] || "本科",
+          pub_time: opt[:pub_time] || "一月内",
           page_no: nil     
     }
     links = []
