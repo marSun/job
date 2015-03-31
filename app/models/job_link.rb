@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: job_links
+#
+#  id       :integer          not null, primary key
+#  url      :string(255)
+#  type     :string(255)
+#  position :string(255)
+#  sign     :integer          default(0)
+#
+
 class JobLink < ActiveRecord::Base
   #
   #column           type                           description

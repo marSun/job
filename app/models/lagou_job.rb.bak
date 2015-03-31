@@ -1,0 +1,27 @@
+# encoding:utf-8
+# DB_BEGIN
+#
+# DB_END
+
+class LagouJob < ActiveRecord::Base
+  attr_accessible :campany, :position, :salary, :city, :experience, :education, :position_type, :sub_detail, :pub_time, :position_key, :position_url
+
+#  def initialize(options)
+    #super
+    #@campany = options[:campany]
+    #@position = options[:position]
+    #@salary = options[:salary]
+    #@city = options[:city]
+    #@experience  = options[:experience]
+    #@education = options[:education]
+    #@position_type = options[:position_type]
+    #@sub_detail = options[:sub_detail]
+    #@pub_time = options[:pub_time]
+#  end
+
+  def self.add(options)
+    create(options)
+
+  end
+
+end
